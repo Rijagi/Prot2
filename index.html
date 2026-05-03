@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tava & Flamingo</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -9,22 +10,18 @@
 
 <h1>Tava & Flamingo</h1>
 
-<input type="text" id="search" placeholder="Search car..." onkeyup="searchCar()">
+<div class="top-controls">
+  <input type="text" id="search" placeholder="Search by brand, model, or year..." onkeyup="searchCar()">
+  <button id="toggleBtn" onclick="toggleList()">Toggle Car List</button>
+</div>
 
-<button onclick="toggleList()">Toggle Car List</button>
+<ul id="carList"></ul>
 
-<ul id="carList">
-  <li onclick="openCar('BMW E39')">BMW 5 Series (E39)</li>
-  <li onclick="openCar('Mercedes W210')">Mercedes E-Class (W210)</li>
-  <li onclick="openCar('Audi A4 B5')">Audi A4 (B5)</li>
-</ul>
-
-<!-- Modal -->
 <div id="modal" class="hidden">
   <div class="modal-content">
-    <span onclick="closeModal()">X</span>
+    <span class="close-btn" onclick="closeModal()">X</span>
     <h2 id="carTitle"></h2>
-    <img id="carImage" src="">
+    <img id="carImage" src="" alt="Car image">
     <ul id="partsList"></ul>
   </div>
 </div>
